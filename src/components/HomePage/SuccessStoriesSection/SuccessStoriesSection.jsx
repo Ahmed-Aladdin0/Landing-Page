@@ -5,23 +5,20 @@ export default function SuccessStoriesSection() {
 		{
 			id: 1,
 			name: "Yousef Adel",
-			address: "10th of Ramadan, Egypt",
 			description: "The best app I have ever used, it is very useful and easy to use and it is very fast and responsive.",
 			imageSrc: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 			role: "City Mayor, Westport"
 		},
 		{
 			id: 2,
-			name: "Ahmed Mohamed",
-			address: "10th of Ramadan, Egypt",
+			name: "Mohanned Ashraf",
 			description: "The best app I have ever used, it is very useful and easy to use and it is very fast and responsive.",
 			imageSrc: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 			role: "Resident, Eastlake"
 		},
 		{
 			id: 3,
-			name: "Mohamed Ali",
-			address: "10th of Ramadan, Egypt",
+			name: "Mahmoud Fathy",
 			description: "The best app I have ever used, it is very useful and easy to use and it is very fast and responsive.",
 			imageSrc: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 			role: "Service Provider, GreenScape"
