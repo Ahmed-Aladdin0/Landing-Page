@@ -37,7 +37,7 @@ export default function HomePage() {
     <div style={{ width: "100%", position: "relative"}} className='bg-white pt-5'>
       <TrustedCitioSection />
     </div>
-    <div style={{ width: "100%", position: "relative"}} className='bg-dark pt-5'>
+    <div style={{ width: "100%", position: "relative"}} className=' pt-5'>
       <FooterSection />
     </div>
   

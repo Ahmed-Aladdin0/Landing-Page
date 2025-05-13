@@ -1,0 +1,11 @@
+.hero-container {
+  height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    height: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}

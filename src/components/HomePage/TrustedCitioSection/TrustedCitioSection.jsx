@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCity, faUniversity, faLandmark, faBuilding, faMonument } from '@fortawesome/free-solid-svg-icons';
 
 export default function TrustedSection() {
-  // الأيقونات اللي على الشريط - يمكنك تغييره لما هو متاح لك في FontAwesome
   const trustedIcons = [
     { id: 1, icon: faCity, label: "City" },
     { id: 2, icon: faLandmark, label: "Landmark" },
@@ -15,7 +14,7 @@ export default function TrustedSection() {
   return (
     <div style={{
       background: "#fff",
-      padding: "44px 0 32px 0",
+      padding: "44px 0 8px 0",
       borderBottom: "1px solid #f3f3f5"
     }}>
       <div className="container text-center">
@@ -24,7 +23,7 @@ export default function TrustedSection() {
             color: "#20294a",
             fontWeight: 700,
             fontSize: 18,
-            marginBottom: 15,
+            marginBottom: 8,
             letterSpacing: 0.2,
           }}>
           Trusted by Leading Cities and Organizations

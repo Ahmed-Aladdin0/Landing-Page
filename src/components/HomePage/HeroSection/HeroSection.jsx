@@ -1,7 +1,9 @@
 import React from "react";
 import heropic from "../../../assets/heropic.png";
 import styles from "./HeroSection.module.css";
+import { useNavigate } from 'react-router-dom';
 export default function HeroSection() {
+	const navigate=useNavigate();
 	return (
 		<>
 			<div className={`${styles["hero-container"]} container d-flex align-items-center justify-content-center`}>
@@ -16,10 +18,10 @@ export default function HeroSection() {
 							platform.
 						</p>
 						<div className="d-flex gap-3 mt-4 mb-md-0 mb-4">
-							<button className="btn btn-primary rounded-pill fw-bold px-md-4 px-2 py-2">
+							<button className="btn btn-primary rounded-pill fw-bold px-md-4 px-2 py-2" onClick={()=>navigate("/features")}>
 								Explore Features
 							</button>
-							<button className="btn btn-outline-primary rounded-pill fw-bold px-md-4 px-2 py-2">
+							<button className="btn btn-outline-primary rounded-pill fw-bold px-md-4 px-2 py-2" onClick={()=>navigate("/demo")}>
 								Request a Demo
 							</button>
 						</div>
