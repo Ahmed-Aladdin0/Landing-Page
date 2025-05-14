@@ -12,12 +12,12 @@ export default function StatisticsSection() {
         <div
             style={{
                 background: '#2563eb',
-                padding: '54px 0 44px 0',
+                padding: '54px 0 54px 0',
                 width: '100vw',
                 marginLeft: 'calc(-50vw + 50%)',
             }}
         >
-            <div className="container">
+            <div className="container mb-5">
                 <div className="row justify-content-center">
                     {statisticsItems.map((item) => (
                         <div

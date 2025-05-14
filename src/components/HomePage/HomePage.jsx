@@ -13,7 +13,7 @@ import FooterSection from './FooterSection/FooterSection'
 export default function HomePage() {
   return <>
     <Navbar />
-    <div style={{ width: "100%", position: "relative" ,backgroundColor: "#effbf9"}}>
+    <div style={{ width: "100%", position: "relative" ,backgroundColor: "#effbf9"}} >
       <HeroSection />
     </div>
     <div style={{ width: "100%", position: "relative"}} className='bg-white pt-5'>
