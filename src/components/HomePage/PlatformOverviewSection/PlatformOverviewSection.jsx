@@ -1,32 +1,35 @@
 import React from "react";
 import styles from "./PlatformOverviewSection.module.css";
-import mobilepic from "../../../assets/ChatGPT Image May 12, 2025, 09_13_45 PM.png";
+import mobilePic from "../../../assets/ChatGPT Image May 12, 2025, 09_13_45 PM.png";
+import dashboardPic from "../../../assets/DashboardAnalytics.png";
+import providerPortalPic from "../../../assets/Portal2.png";
+import communityPic from "../../../assets/community.jpg";
 export default function PlatformOverviewSection() {
   const PlatformCards = [
     {
       id: 1,
-      imageSrc: mobilepic,
+      imageSrc: mobilePic,
       imageAlt: "Mobile App Interface",
       title: "Mobile App Interface",
       description: "Residents can easily report issues through our intuitive mobile app"
     },
     {
       id: 2,
-      imageSrc: "https://ak-d.tripcdn.com/images/100h0q000000gcwf27C3A_C_1200_800_Q70.jpg?proc=source%2ftrip",
+      imageSrc: dashboardPic,
       imageAlt: "Dashboard Analytics",
       title: "Dashboard Analytics",
       description: "View real-time data and insights about city operations"
     },
     {
       id: 3,
-      imageSrc: "https://ak-d.tripcdn.com/images/100h0q000000gcwf27C3A_C_1200_800_Q70.jpg?proc=source%2ftrip",
+      imageSrc: providerPortalPic,
       imageAlt: "Service Provider Portal",
       title: "Service Provider Portal",
       description: "Efficient tool for service providers to manage requests"
     },
     {
       id: 4,
-      imageSrc: "https://ak-d.tripcdn.com/images/100h0q000000gcwf27C3A_C_1200_800_Q70.jpg?proc=source%2ftrip",
+      imageSrc: communityPic,
       imageAlt: "Community Engagement",
       title: "Community Engagement",
       description: "Connect with fellow residents and contribute to city improvement"
