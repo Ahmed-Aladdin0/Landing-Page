@@ -7,7 +7,7 @@ export default function HeroSection() {
 			<div className="container py-5">
 				<div className="text-center mb-3">
 					<h1 className="fw-bold" style={{ fontSize: "42px" }}>
-						Everything You Need to Run a Smart <br /> City
+						Everything You Need to Run a Smart City
 					</h1>
 					<p className="fw-bold text-muted">
 						Citio brings together residents, government, and providers in one
@@ -15,7 +15,7 @@ export default function HeroSection() {
 					</p>
 					<div
 						role="group"
-						className="mt-4 btn-group rounded-pill shadow p-2 px-3 bg-body-tertiary"
+						className="mt-4 btn-group rounded-pill shadow p-md-2 px-md-3 bg-body-tertiary"
 					>
 						<button type="button" className={`${styles["btn1"]} me-2 ${activeButton === "For Residents" ? styles.activeButton : ""}` }  onClick ={() => setActiveButton("For Residents")}>
 							For Residents

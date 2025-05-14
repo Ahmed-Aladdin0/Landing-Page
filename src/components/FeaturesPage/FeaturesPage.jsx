@@ -14,6 +14,7 @@ export default function FeaturesPage() {
 					width: "100%",
 					position: "relative",
 					backgroundColor: "#effbf9",
+					
 				}}
 			>
 				<HeroSection />
