@@ -28,7 +28,7 @@ export default function SuccessStoriesSection() {
 	return (
 		<div className="container py-5">
 			<div className="text-center mb-5">
-					<h1 className="fw-bold" style={{ fontSize: "42px" }}>
+					<h1 className="fw-bold" style={{ fontSize: "37px" }}>
 						Success Stories
 					</h1>
 					<p className="fw-bold text-muted">

@@ -6,7 +6,7 @@ export default function HeroSection() {
 		<>
 			<div className="container py-5">
 				<div className="text-center mb-3">
-					<h1 className="fw-bold" style={{ fontSize: "42px" }}>
+					<h1 className="fw-bold" style={{ fontSize: "37px" }}>
 						Everything You Need to Run a Smart City
 					</h1>
 					<p className="fw-bold text-muted">

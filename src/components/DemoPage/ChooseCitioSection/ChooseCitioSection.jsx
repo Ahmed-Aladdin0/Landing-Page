@@ -32,7 +32,7 @@ export default function ChooseCitioSection() {
     <>
       <div className="container pt-5">
         <div className="text-center mb-5">
-          <h1 className="fw-bold" style={{ fontSize: "42px" }}>
+          <h1 className="fw-bold" style={{ fontSize: "37px" }}>
             Why Cities Choose Citio
           </h1>
         </div>

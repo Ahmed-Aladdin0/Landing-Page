@@ -11,7 +11,7 @@ export default function HeroSection() {
 			<div className={`${styles["hero-container"]} container d-flex align-items-center justify-content-center`}>
 				<div className="row h-75">
 					<div className="col-lg-6 pe-4 d-flex flex-column justify-content-center">
-						<h1 className="fw-bold" style={{ fontSize: "42px" }}>
+						<h1 className="fw-bold" style={{ fontSize: "37px" }}>
 							Schedule Your <br /> Personalized Demo of <br /> Citio
 						</h1>
 						<p className="lead " style={{ fontWeight: 400 }}>
