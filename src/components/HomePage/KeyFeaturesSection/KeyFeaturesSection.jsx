@@ -8,6 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function KeyFeaturesSection() {
 	const cardsItems = [
@@ -66,40 +67,209 @@ export default function KeyFeaturesSection() {
 				"Access all features on the go with our responsive mobile app designed for residents, government staff, and service providers.",
 		},
 	];
-	return (
-		<>
-			<div className="container py-5">
-				<div className="text-center mb-5">
-					<h1 className="fw-bold" style={{ fontSize: "37px" }}>
-						Key Features
-					</h1>
-					<p className="fw-bold text-muted">
-						One platform connecting residents, government, and service providers
-						with <br />
-						intelligent tools for modern city management.
-					</p>
-				</div>
 
-				<div className="row g-4 mb-4">
-					{cardsItems.map((item) => (
-						<div key={item.id} className="col-md-6 col-lg-4">
-							<div className="p-4 bg-white rounded shadow h-100">
-								<div
-									className={`rounded-circle d-inline-flex justify-content-center align-items-center mb-3 ${item.iconBg}`}
-									style={{ width: "50px", height: "50px" }}
-								>
-									<FontAwesomeIcon
-										icon={item.icon}
-										className={`fs-5 ${item.iconColor}`}
-									/>
-								</div>
-								<h5 className="fw-bold">{item.title}</h5>
-								<p className="text-muted">{item.description}</p>
-							</div>
-						</div>
-					))}
-				</div>
-			</div>
-		</>
+	// Animation variants
+	const containerVariants = {
+		hidden: { opacity: 0 },
+		visible: {
+			opacity: 1,
+			transition: {
+				staggerChildren: 0.2
+			}
+		}
+	};
+
+	const titleVariants = {
+		hidden: { y: -50, opacity: 0 },
+		visible: {
+			y: 0,
+			opacity: 1,
+			transition: {
+				duration: 0.6,
+				ease: "easeOut"
+			}
+		}
+	};
+
+	const cardVariants = {
+		hidden: { y: 50, opacity: 0 },
+		visible: {
+			y: 0,
+			opacity: 1,
+			transition: {
+				duration: 0.5,
+				ease: "easeOut"
+			}
+		},
+		hover: {
+			y: -10,
+			boxShadow: "0px 20px 40px rgba(0, 0, 0, 0.15)",
+			transition: {
+				duration: 0.3,
+				ease: "easeInOut"
+			}
+		}
+	};
+
+	const iconVariants = {
+		hidden: { scale: 0, rotate: -180 },
+		visible: {
+			scale: 1,
+			rotate: 0,
+			transition: {
+				type: "spring",
+				stiffness: 260,
+				damping: 20
+			}
+		},
+		hover: {
+			scale: 1.2,
+			rotate: 360,
+			transition: {
+				duration: 0.6,
+				ease: "easeInOut"
+			}
+		}
+	};
+
+	const textGradientVariants = {
+		animate: {
+			backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+			transition: {
+				duration: 5,
+				repeat: Infinity,
+				ease: "linear"
+			}
+		}
+	};
+
+	return (
+		<motion.div 
+			className="container py-5"
+			initial="hidden"
+			whileInView="visible"
+			viewport={{ once: true, amount: 0.2 }}
+		>
+			<motion.div 
+				className="text-center mb-5"
+				variants={titleVariants}
+			>
+				<motion.h1 
+					className="fw-bold" 
+					style={{ 
+						fontSize: "37px",
+						background: "linear-gradient(90deg, #0d6efd, #198754, #0d6efd)",
+						backgroundSize: "200% 100%",
+						WebkitBackgroundClip: "text",
+						WebkitTextFillColor: "transparent",
+						backgroundClip: "text"
+					}}
+					variants={textGradientVariants}
+					animate="animate"
+					
+				>
+					Key Features
+				</motion.h1>
+				<motion.p 
+					className="fw-bold text-muted"
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{ delay: 0.3, duration: 0.6 }}
+				>
+					One platform connecting residents, government, and service providers
+					with intelligent tools for modern city management.
+				</motion.p>
+			</motion.div>
+
+			<motion.div 
+				className="row g-4 mb-4"
+				variants={containerVariants}
+			>
+				{cardsItems.map((item, index) => (
+					<motion.div 
+						key={item.id} 
+						className="col-md-6 col-lg-4"
+						variants={cardVariants}
+						whileHover="hover"
+					>
+						<motion.div 
+							className="p-4 bg-white rounded shadow h-100 position-relative overflow-hidden"
+							style={{ cursor: "pointer" }}
+						>
+							{/* Background decoration */}
+							<motion.div
+								className="position-absolute"
+								style={{
+									top: "-50px",
+									right: "-50px",
+									width: "100px",
+									height: "100px",
+									background: item.iconColor.includes("primary") 
+										? "rgba(13, 110, 253, 0.1)" 
+										: "rgba(25, 135, 84, 0.1)",
+									borderRadius: "50%",
+									filter: "blur(40px)"
+								}}
+								animate={{
+									scale: [1, 1.2, 1],
+									opacity: [0.5, 0.8, 0.5]
+								}}
+								transition={{
+									duration: 3,
+									repeat: Infinity,
+									delay: index * 0.2
+								}}
+							/>
+							
+							<motion.div
+								className={`rounded-circle d-inline-flex justify-content-center align-items-center mb-3 ${item.iconBg}`}
+								style={{ width: "50px", height: "50px", position: "relative", zIndex: 1 }}
+								variants={iconVariants}
+								whileHover="hover"
+							>
+								<FontAwesomeIcon
+									icon={item.icon}
+									className={`fs-5 ${item.iconColor}`}
+								/>
+							</motion.div>
+							
+							<motion.h5 
+								className="fw-bold"
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								transition={{ delay: 0.2 }}
+							>
+								{item.title}
+							</motion.h5>
+							
+							<motion.p 
+								className="text-muted"
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								transition={{ delay: 0.3 }}
+							>
+								{item.description}
+							</motion.p>
+
+							{/* Hover effect line */}
+							<motion.div
+								className="position-absolute bottom-0 start-0"
+								style={{
+									height: "3px",
+									background: item.iconColor.includes("primary") 
+										? "#0d6efd" 
+										: "#198754",
+									width: "0%"
+								}}
+								whileHover={{
+									width: "100%",
+									transition: { duration: 0.3 }
+								}}
+							/>
+						</motion.div>
+					</motion.div>
+				))}
+			</motion.div>
+		</motion.div>
 	);
 }
