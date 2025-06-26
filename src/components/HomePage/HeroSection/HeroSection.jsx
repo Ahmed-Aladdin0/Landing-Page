@@ -87,7 +87,7 @@ export default function HeroSection() {
 
 	return (
 		<motion.div 
-			className={`${styles["hero-container"]} container d-flex align-items-center justify-content-center`}
+			className={`${styles["hero-container"]} container d-flex align-items-center justify-content-center mt-5`}
 			variants={containerVariants}
 			initial="hidden"
 			animate="visible"
