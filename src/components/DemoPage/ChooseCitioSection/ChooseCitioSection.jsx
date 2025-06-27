@@ -88,7 +88,7 @@ export default function ChooseCitioSection() {
 				</motion.div>
 				<motion.div className="row justify-content-center g-4 mb-5">
 					{featureItems.map((item) => (
-						<motion.div key={item.id} className="col-lg-3 col-md-6 d-flex">
+						<motion.div key={item.id} className="col-lg-3 col-md-6 d-flex" whileHover={{ scale: 1.05, y: -10 }}>
 							<motion.div
 								className="bg-white text-center shadow-lg h-100 w-100 position-relative overflow-hidden"
 								style={{
@@ -96,7 +96,6 @@ export default function ChooseCitioSection() {
 									padding: "35px 25px",
 									transition: "all 0.3s ease",
 									border: "1px solid rgba(0,0,0,0.05)",
-									cursor: "pointer",
 								}}
 								variants={inputVariants}
 							>
