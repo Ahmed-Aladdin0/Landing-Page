@@ -1,5 +1,6 @@
 .hero-container {
-  height: 100vh;
+  min-height: 80vh;
+  position: relative;
 }
 
 @media (max-width: 768px) {

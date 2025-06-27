@@ -122,21 +122,6 @@ export default function SuccessStoriesSection() {
 								overflow: "hidden"
 							}}
 						>
-							{/* Animated quote icon */}
-							<motion.div
-								style={{
-									position: "absolute",
-									top: -10,
-									right: 20,
-									fontSize: 60,
-									color: "rgba(13,110,253,0.1)"
-								}}
-								initial={{ rotate: -180, opacity: 0 }}
-								animate={{ rotate: 0, opacity: 1 }}
-								transition={{ delay: index * 0.2 + 0.5 }}
-							>
-								"
-							</motion.div>
 
 							<div className="d-flex align-items-center mb-3">
 								<motion.img

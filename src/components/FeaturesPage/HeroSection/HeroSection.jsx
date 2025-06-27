@@ -1,11 +1,27 @@
 import React, { useState } from "react";
 import styles from "./HeroSection.module.css";
+import { motion } from "framer-motion";
 export default function HeroSection() {
-    const [activeButton, setActiveButton] = useState("For Residents");
+	const [activeButton, setActiveButton] = useState("For Residents");
+	const sectionVariants = {
+		hidden: { opacity: 0, y: 100 },
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				duration: 0.8,
+				ease: "easeOut",
+			},
+		},
+	};
 	return (
 		<>
-			<div className="container py-5">
-				<div className="text-center mb-3">
+			<motion.div className="container py-5" 
+			variants={sectionVariants}
+			initial="hidden"
+			animate="visible"
+			>
+				<motion.div className="text-center mb-3">
 					<h1 className="fw-bold" style={{ fontSize: "37px" }}>
 						Everything You Need to Run a Smart City
 					</h1>
@@ -13,22 +29,46 @@ export default function HeroSection() {
 						Citio brings together residents, government, and providers in one
 						intelligent platform.
 					</p>
-					<div
+					<motion.div
 						role="group"
 						className="mt-4 btn-group rounded-pill shadow p-md-2 px-md-3 bg-body-tertiary"
 					>
-						<button type="button" className={`${styles["btn1"]} me-2 ${activeButton === "For Residents" ? styles.activeButton : ""}` }  onClick ={() => setActiveButton("For Residents")}>
+						<motion.button
+							type="button"
+							className={`${styles["btn1"]} me-2 ${
+								activeButton === "For Residents" ? styles.activeButton : ""
+							}`}
+							onClick={() => setActiveButton("For Residents")}
+							whileHover={{ scale: 1.1 }}
+							whileTap={{ scale: 0.95 }}
+						>
 							For Residents
-						</button>
-						<button type="button" className={`${styles["btn1"]} me-2 ${activeButton === "For Government" ? styles.activeButton : ""}`} onClick={() => setActiveButton("For Government")}>
+						</motion.button>
+						<motion.button
+							type="button"
+							className={`${styles["btn1"]} me-2 ${
+								activeButton === "For Government" ? styles.activeButton : ""
+							}`}
+							onClick={() => setActiveButton("For Government")}
+							whileHover={{ scale: 1.1 }}
+							whileTap={{ scale: 0.95 }}
+						>
 							For Government
-						</button>
-						<button type="button" className={`${styles["btn1"]} ${activeButton === "For Providers" ? styles.activeButton : ""}`} onClick ={() => setActiveButton("For Providers")}>
+						</motion.button>
+						<motion.button
+							type="button"
+							className={`${styles["btn1"]} ${
+								activeButton === "For Providers" ? styles.activeButton : ""
+							}`}
+							onClick={() => setActiveButton("For Providers")}
+							whileHover={{ scale: 1.1 }}
+							whileTap={{ scale: 0.95 }}
+						>
 							For Providers
-						</button>
-					</div>
-				</div>
-			</div>
+						</motion.button>
+					</motion.div>
+				</motion.div>
+			</motion.div>
 		</>
 	);
 }
