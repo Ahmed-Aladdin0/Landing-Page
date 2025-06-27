@@ -62,9 +62,7 @@ export default function ChooseCitioSection() {
 	return (
 		<motion.div
 			className="py-5"
-			style={{
-				background: "linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)",
-			}}
+			
 			variants={sectionVariants}
 			initial="hidden"
 			whileInView="visible"
