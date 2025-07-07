@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+import citioLogo from "../../../assets/citio.png";
 
 export default function Navbar() {
 	return (
@@ -10,17 +12,20 @@ export default function Navbar() {
 			}}
 		>
 			<div className="container">
-				<a
-					className="navbar-brand fw-bold"
-					href="/"
-					style={{
-						fontSize: "1.8rem",
-						color: "#0d6efd",
-						letterSpacing: "-0.5px",
+				<motion.img
+					src={citioLogo}
+					alt="Citio Logo"
+					style={{ height: "40px", width: "auto", cursor: "pointer" }}
+					whileHover={{
+						scale: 1.1,
+						rotate: [0, -3, 3, 0],
+						y: -2,
 					}}
-				>
-					Citio
-				</a>
+					transition={{
+						duration: 0.3,
+						ease: "easeInOut",
+					}}
+				/>
 
 				<button
 					className="navbar-toggler border-0 shadow-none"
@@ -37,57 +42,59 @@ export default function Navbar() {
 				<div className="collapse navbar-collapse" id="navbarNav">
 					<ul className="navbar-nav ms-auto align-items-center">
 						<li className="nav-item">
-							<a
+							<motion.a
 								className="nav-link px-3 fw-medium"
 								href="/"
 								style={{ color: "#333", fontSize: "0.95rem" }}
+								whileHover={{  color: "#129990" }}
+								transition={{ duration: 0.1 }}
 							>
 								Home
-							</a>
+							</motion.a>
 						</li>
 						<li className="nav-item">
-							<a
+							<motion.a
 								className="nav-link px-3 fw-medium"
 								href="/features"
 								style={{ color: "#333", fontSize: "0.95rem" }}
+								whileHover={{  color: "#129990" }}
+								transition={{ duration: 0.1 }}
 							>
 								Features
-							</a>
+							</motion.a>
 						</li>
 						<li className="nav-item">
-							<a
+							<motion.a
 								className="nav-link px-3 fw-medium"
 								href="/how-it-works"
 								style={{ color: "#333", fontSize: "0.95rem" }}
+								whileHover={{  color: "#129990" }}
+								transition={{ duration: 0.1 }}
 							>
 								How It Works
-							</a>
+							</motion.a>
 						</li>
 						<li className="nav-item">
-							<a
+							<motion.a
 								className="nav-link px-3 fw-medium"
 								href="/about"
 								style={{ color: "#333", fontSize: "0.95rem" }}
+								whileHover={{  color: "#129990" }}
+								transition={{ duration: 0.1 }}
 							>
 								About
-							</a>
+							</motion.a>
 						</li>
 						<li className="nav-item">
-							<a
+							<motion.a
 								className="nav-link px-3 fw-medium"
 								href="/contact"
 								style={{ color: "#333", fontSize: "0.95rem" }}
+								whileHover={{  color: "#129990" }}
+								transition={{ duration: 0.1 }}
 							>
 								Contact
-							</a>
-						</li>
-						<li className="nav-item ms-3">
-							<button
-								className="btn btn-primary rounded-pill px-4 py-2 fw-medium"
-								style={{ fontSize: "0.95rem" }}
-							>
-								Get Started
-							</button>
+							</motion.a>
 						</li>
 					</ul>
 				</div>

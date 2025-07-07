@@ -101,7 +101,7 @@ export default function HeroSection() {
 						className="fw-bold" 
 						style={{ 
 							fontSize: "37px",
-							background: "linear-gradient(90deg, #0d6efd, #0056b3, #0d6efd)",
+							background: "linear-gradient(90deg, #129990, #0f7a75, #129990)",
 							backgroundSize: "200% 100%",
 							WebkitBackgroundClip: "text",
 							WebkitTextFillColor: "transparent",
@@ -131,7 +131,8 @@ export default function HeroSection() {
 						transition={{ delay: 0.8, duration: 0.6 }}
 					>
 						<motion.button 
-							className="btn btn-primary rounded-pill fw-bold px-md-4 px-2 py-2" 
+							className="btn rounded-pill fw-bold px-md-4 px-2 py-2"
+							style={{ backgroundColor: "#129990", color: "white" }}
 							onClick={() => navigate("/features")}
 							variants={buttonVariants}
 							whileHover="hover"
@@ -141,7 +142,8 @@ export default function HeroSection() {
 						</motion.button>
 						
 						<motion.button 
-							className="btn btn-outline-primary rounded-pill fw-bold px-md-4 px-2 py-2" 
+							className="btn rounded-pill fw-bold px-md-4 px-2 py-2"
+							style={{ border: " 1px solid #129990", color: "#129990" }} 
 							onClick={() => navigate("/demo")}
 							variants={buttonVariants}
 							whileHover="hover"

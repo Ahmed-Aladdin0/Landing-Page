@@ -169,11 +169,12 @@ export default function FormSection() {
 					whileHover="hover"
 					whileTap="tap"
 					type="submit"
-					className="btn btn-primary rounded-pill w-100 fw-bold btn-lg"
+					className="btn rounded-pill w-100 fw-bold btn-lg"
 					style={{
 						fontSize: 16,
 						marginTop: 2,
-						background: "linear-gradient(45deg, #007bff, #0056b3)",
+						background: "linear-gradient(45deg ,#129990, #129990)",
+						color: "#fff",
 					}}
 				>
 					Request Demo

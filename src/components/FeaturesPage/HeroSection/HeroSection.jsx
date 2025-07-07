@@ -22,7 +22,7 @@ export default function HeroSection() {
 			animate="visible"
 			>
 				<motion.div className="text-center mb-3">
-					<h1 className="fw-bold" style={{ fontSize: "37px" }}>
+					<h1 className="fw-bold" style={{ fontSize: "37px" ,color:"#129990"}}>
 						Everything You Need to Run a Smart City
 					</h1>
 					<p className="fw-bold text-muted">

@@ -62,7 +62,7 @@ export default function StatisticsSection() {
     return (
         <motion.div
             style={{
-                background: '#2563eb',
+                background: '#129990',
                 padding: '54px 0 54px 0',
                 width: '100vw',
                 marginLeft: 'calc(-50vw + 50%)',

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./PlatformOverviewSection.module.css";
-import mobilePic from "../../../assets/ChatGPT Image May 12, 2025, 09_13_45 PM.png";
+import mobilePic from "../../../assets/assets_task_01jzj8qg5zfrk8r1vr2an5p3bp_1751886151_img_0.png";
 import dashboardPic from "../../../assets/DashboardAnalytics.png";
 import providerPortalPic from "../../../assets/Portal2.png";
 import communityPic from "../../../assets/community.jpg";
