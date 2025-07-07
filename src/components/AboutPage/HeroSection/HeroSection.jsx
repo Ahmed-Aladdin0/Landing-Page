@@ -10,7 +10,7 @@ const HeroSection = () => {
 					<div className="col-lg-7 mb-5 mb-lg-0">
 						<motion.div
 							initial={{ opacity: 0, x: -70 }}
-							animate={{ opacity: 1, x: 0 }}
+							whileInView={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.6 }}
 						>
 							<h1
@@ -69,7 +69,7 @@ const HeroSection = () => {
 					<div className="col-lg-5">
 						<motion.div
 							initial={{ opacity: 0, x: 70 }}
-							animate={{ opacity: 1, x: 0 }}
+							whileInView={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.6, delay: 0.2 }}
 							className="h-100 d-flex align-items-center"
 						>

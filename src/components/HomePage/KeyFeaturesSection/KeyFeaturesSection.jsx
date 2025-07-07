@@ -161,7 +161,8 @@ export default function KeyFeaturesSection() {
 						backgroundSize: "200% 100%",
 						WebkitBackgroundClip: "text",
 						WebkitTextFillColor: "transparent",
-						backgroundClip: "text"
+						backgroundClip: "text",
+						paddingBottom: "10px",
 					}}
 					variants={textGradientVariants}
 					animate="animate"

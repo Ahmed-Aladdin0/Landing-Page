@@ -106,6 +106,7 @@ export default function HeroSection() {
 							WebkitBackgroundClip: "text",
 							WebkitTextFillColor: "transparent",
 							backgroundClip: "text",
+							paddingBottom: "10px",
 						}}
 						variants={textGradientVariants}
 						animate="animate"
