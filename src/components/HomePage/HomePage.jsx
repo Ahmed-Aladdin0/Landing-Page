@@ -91,11 +91,11 @@ export default function HomePage() {
 
 			{/* Main Page Content */}
 			<Navbar />
-			<HeroSection />
+			<HeroSection className="bg-success" />
 			<KeyFeaturesSection />
 			<HowItWorkSection />
 			<PlatformOverviewSection />
-			<SuccessStoriesSection />
+			{/*<SuccessStoriesSection />*/}
 			<StatisticsSection />
 			<StartBuildingSection />
 			<TrustedCitioSection />
