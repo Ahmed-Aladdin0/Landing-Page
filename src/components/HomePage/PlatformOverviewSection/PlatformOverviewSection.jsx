@@ -74,11 +74,11 @@ export default function PlatformOverviewSection() {
             className="col"
             initial={{ 
               opacity: 0, 
-              x: index % 2 === 0 ? -50 : 50 
+              scale: 0.9
             }}
             whileInView={{ 
               opacity: 1, 
-              x: 0,
+              scale: 1,
               transition: { 
                 duration: 0.6,
                 delay: index * 0.1

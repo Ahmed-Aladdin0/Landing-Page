@@ -65,7 +65,7 @@ export default function HeroSection() {
 							className="d-flex align-items-center"
 							variants={itemVariants}
 						>
-							<motion.div className="bg-primary bg-opacity-10 rounded-pill px-3 py-2 d-inline-flex align-items-center">
+							<motion.div className="bg-primary bg-opacity-10 rounded-pill px-3 py-2 d-inline-flex align-items-center mb-3">
 								<motion.span whileHover={{ scale: 1.1 }} >
 									<FontAwesomeIcon
 										icon={faClock}
