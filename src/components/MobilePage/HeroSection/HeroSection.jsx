@@ -50,7 +50,7 @@ const MobileHeroSection = () => {
 								}}
 								whileTap={{ scale: 0.95 }}
                                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
-								onClick={() => window.open("https://drive.google.com/uc?export=download&id=1LFFPeLnLngFFfC5m_eQPCToxPmZk91X6", "_blank")}
+								onClick={() => window.open("https://download1584.mediafire.com/jjp0qhyqnz6gjHurrmQBRI1KjO2m55xb-t5Kcz1lIsZLAJJdXv5Msx1qiRzFQpry-XtQ-eOPFSyfTxaP7sVrDIYfVoMplIK8nI_tBhZ7cFJpFpIQHE5EP_vAFh_KaqyhzBB2RR98rC5IV8wTGInzURRzX6ktrNfqKP2U3wGM5-rYtgQ/t45trxcanitrt27/base.apk", "_blank")}
 								className="btn px-4 py-3 rounded-4 d-flex align-items-center shadow-sm"
 								style={{
 									backgroundColor: "#129990",
