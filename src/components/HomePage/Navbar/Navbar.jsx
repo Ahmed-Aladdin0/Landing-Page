@@ -196,15 +196,14 @@ export default function Navbar() {
                     display: "inline-block"
                   }}
                   whileHover={{
-                    backgroundColor: "#129990",
-                    color: "#fff",
+                    color: "#129990",
                     scale: 1.05,
                     y: -2
                   }}
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ 
-                    duration: 0.2,
+                    duration: 0.1,
                     delay: index * 0.1,
                     ease: "easeOut"
                   }}
