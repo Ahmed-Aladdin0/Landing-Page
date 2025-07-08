@@ -47,20 +47,23 @@ export default function MainFeaturesSection() {
 	];
 
 	return (
-		<motion.div className="container py-5"
-     initial={{ opacity: 0 , y: 50}}
-     whileInView={{ opacity: 1, y: 0 }}
-     viewport={{ once: true ,amount:0.3  }}
-     transition={{ duration: 0.8, ease: "easeOut" }}
-    >
+		<motion.div
+			className="container py-5"
+			initial={{ opacity: 0, y: 50 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: true, amount: 0.3 }}
+			transition={{ duration: 0.8, ease: "easeOut" }}
+		>
 			<motion.div className="row justify-content-center g-4 mb-3">
-				{featuresItems.map((item,i) => (
-					<motion.div key={item.id} className="col-lg-4 d-flex"
-          initial={{ opacity: 0 , y: 50}}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" , delay: i*0.4}}
-          >
+				{featuresItems.map((item, i) => (
+					<motion.div
+						key={item.id}
+						className="col-lg-4 d-flex"
+						initial={{ opacity: 0, y: 50 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.8, ease: "easeOut", delay: i * 0.4 }}
+					>
 						<motion.div
 							className="bg-white"
 							style={{
@@ -72,7 +75,10 @@ export default function MainFeaturesSection() {
 								height: "100%",
 								transition: "all 0.3s ease",
 							}}
-              whileHover={{ scale: 1.05 , boxShadow: "0 4px 20px rgba(0,0,0,0.1)" }}
+							whileHover={{
+								scale: 1.05,
+								boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+							}}
 						>
 							{/* Icon Circle */}
 							<motion.div
@@ -88,12 +94,12 @@ export default function MainFeaturesSection() {
 									marginBottom: 20,
 								}}
 							>
-								<motion.span 
-                  initial={{rotate: 0}}
-                  whileHover={{rotate: 360}}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                >
-									<FontAwesomeIcon icon={item.icon} size="lg" color="#4F46E5" />
+								<motion.span
+									initial={{ rotate: 0 }}
+									whileHover={{ rotate: 360 }}
+									transition={{ duration: 0.8, ease: "easeOut" }}
+								>
+									<FontAwesomeIcon icon={item.icon} size="lg" color="#129990" />
 								</motion.span>
 							</motion.div>
 

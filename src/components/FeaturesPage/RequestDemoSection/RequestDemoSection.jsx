@@ -26,7 +26,7 @@ export default function RequestDemoSection() {
 	return (
 		<motion.div
 			style={{
-				background: "linear-gradient(90deg,rgb(41, 102, 232) 0%,rgb(7, 48, 135) 100%)",
+				background: "linear-gradient(90deg,#129990 0%,rgb(15, 72, 193) 100%)",
 				borderRadius: 18,
 				boxShadow: "0 2px 24px 0 rgba(60,72,88,.10)",
 				margin: "52px auto 0 auto",

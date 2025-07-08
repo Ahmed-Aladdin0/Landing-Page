@@ -103,7 +103,6 @@ export default function KeyFeaturesSection() {
 		},
 		hover: {
 			y: -10,
-			boxShadow: "0px 20px 40px rgba(0, 0, 0, 0.15)",
 			transition: {
 				duration: 0.3,
 				ease: "easeInOut"
@@ -162,7 +161,8 @@ export default function KeyFeaturesSection() {
 						backgroundSize: "200% 100%",
 						WebkitBackgroundClip: "text",
 						WebkitTextFillColor: "transparent",
-						backgroundClip: "text"
+						backgroundClip: "text",
+						paddingBottom: "10px",
 					}}
 					variants={textGradientVariants}
 					animate="animate"

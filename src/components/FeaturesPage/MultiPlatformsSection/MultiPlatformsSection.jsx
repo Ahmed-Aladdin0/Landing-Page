@@ -36,7 +36,7 @@ export default function MultiPlatformsSection() {
 			transition={{ duration: 0.8, ease: "easeOut" }}
 		>
 			<motion.div className="text-center mb-5">
-				<motion.h1 className="fw-bold" style={{ fontSize: "37px" }} >
+				<motion.h1 className="fw-bold" style={{ fontSize: "37px", color: "#129990" }} >
 					One Platform, Multiple Interfaces
 				</motion.h1>
 				<motion.p className="fw-bold text-muted">

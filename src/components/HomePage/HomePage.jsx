@@ -47,8 +47,8 @@ export default function HomePage() {
 						width: "60px",
 						height: "60px",
 						zIndex: 1000,
-						backgroundColor: "#2563eb",
-						borderColor: "#2563eb",
+						backgroundColor: "#129990",
+						borderColor: "#129990",
 					}}
 					onClick={() => setIsChatOpen(true)}
 					type="button"
@@ -62,15 +62,15 @@ export default function HomePage() {
 				<motion.button
 					whileHover={{ scale: 1.1 }}
 					whileTap={{ scale: 0.9 }}
-					className="btn btn-primary position-fixed rounded-circle shadow-lg"
+					className="btn position-fixed rounded-circle shadow-lg"
 					style={{
 						bottom: "20px",
 						right: "20px",
 						width: "60px",
 						height: "60px",
 						zIndex: 1000,
-						backgroundColor: "#2563eb",
-						borderColor: "#2563eb",
+						backgroundColor: "#129990",
+						borderColor: "#129990",
 					}}
 					onClick={() => {
 						setIsChatOpen(true);
@@ -91,11 +91,11 @@ export default function HomePage() {
 
 			{/* Main Page Content */}
 			<Navbar />
-			<HeroSection />
+			<HeroSection className="bg-success" />
 			<KeyFeaturesSection />
 			<HowItWorkSection />
 			<PlatformOverviewSection />
-			<SuccessStoriesSection />
+			{/*<SuccessStoriesSection />*/}
 			<StatisticsSection />
 			<StartBuildingSection />
 			<TrustedCitioSection />

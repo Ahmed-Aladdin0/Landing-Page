@@ -40,7 +40,7 @@ export default function HeroSection() {
 							variants={itemVariants}
 							style={{
 								fontSize: "37px",
-								background: "linear-gradient(135deg, #007bff, #6610f2)",
+								background: "linear-gradient(135deg, #129990,#129990)",
 								WebkitBackgroundClip: "text",
 								WebkitTextFillColor: "transparent",
 								backgroundClip: "text",
@@ -56,6 +56,7 @@ export default function HeroSection() {
 								fontWeight: 400,
 								fontSize: "1.1rem",
 								lineHeight: "1.6",
+								
 							}}
 						>
 							See how Citio transforms city operations and citizen engagement.
@@ -64,18 +65,19 @@ export default function HeroSection() {
 							className="d-flex align-items-center"
 							variants={itemVariants}
 						>
-							<motion.div className="bg-primary bg-opacity-10 rounded-pill px-3 py-2 d-inline-flex align-items-center">
-								<motion.span whileHover={{ scale: 1.1 }}>
+							<motion.div className="bg-primary bg-opacity-10 rounded-pill px-3 py-2 d-inline-flex align-items-center mb-3">
+								<motion.span whileHover={{ scale: 1.1 }} >
 									<FontAwesomeIcon
 										icon={faClock}
-										className="me-2 text-primary"
-										style={{ fontSize: "16px" }}
+										className="me-2"
+										style={{ fontSize: "16px" ,color:"#129990"}}
 									/>
 								</motion.span>
 
 								<motion.span
-									className="text-primary fw-medium"
-									style={{ fontSize: "14px" }}
+									className="fw-medium"
+									style={{ fontSize: "14px" ,color:"#129990"}}
+									
 								>
 									Free - No Obligation - 30-Minute Session
 								</motion.span>
