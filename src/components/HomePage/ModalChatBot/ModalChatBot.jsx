@@ -7,6 +7,7 @@ import {
   faRobot, 
   faUser
 } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
 export default function ModalChatBot({ isOpen = true, onClose = () => {} }) {
   const [message, setMessage] = useState('');
@@ -66,55 +67,57 @@ export default function ModalChatBot({ isOpen = true, onClose = () => {} }) {
   };
 
   const handleSendMessage = async (e) => {
-    if (e) e.preventDefault();
-    if (!message.trim()) return;
+  if (e) e.preventDefault();
+  if (!message.trim()) return;
 
-    const userMessage = {
-      id: messages.length + 1,
-      text: message,
-      sender: 'user',
-      timestamp: new Date(),
-      isComplete: true
-    };
-    setMessages(prev => [...prev, userMessage]);
-    setMessage('');
-    setIsTyping(true);
+  const userMessage = {
+    id: messages.length + 1,
+    text: message,
+    sender: 'user',
+    timestamp: new Date(),
+    isComplete: true
+  };
+  setMessages(prev => [...prev, userMessage]);
+  setMessage('');
+  setIsTyping(true);
 
-    try {
-      const response = await fetch('https://citioai-webapp.azurewebsites.net/chatbot', {
-        method: 'POST',
+  try {
+    const response = await axios.post(
+      'https://citioai-webapp.azurewebsites.net/chatbot',
+      { question: message },
+      {
         headers: {
           'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ question: message })
-      });
-      
-      const data = await response.json();
+        }
+      }
+    );
 
-      const botResponse = {
-        id: messages.length + 2,
-        text: '',
-        sender: 'bot',
-        timestamp: new Date(),
-        isComplete: false
-      };
-      setMessages(prev => [...prev, botResponse]);
+    const botResponse = {
+      id: messages.length + 2,
+      text: '',
+      sender: 'bot',
+      timestamp: new Date(),
+      isComplete: false
+    };
+    setMessages(prev => [...prev, botResponse]);
 
-      typewriterEffect(data.answer, botResponse.id);
+    typewriterEffect(response.data.answer, botResponse.id);
 
-    } catch (error) {
-      const errorMessage = {
-        id: messages.length + 2,
-        text: '',
-        sender: 'bot',
-        timestamp: new Date(),
-        isComplete: false
-      };
-      setMessages(prev => [...prev, errorMessage]);
-      
-      typewriterEffect("عفواً، حدث خطأ في الاتصال بالخادم", errorMessage.id);
-    }
-  };
+  } catch (error) {
+    console.error('API Error:', error);
+    
+    const errorMessage = {
+      id: messages.length + 2,
+      text: '',
+      sender: 'bot',
+      timestamp: new Date(),
+      isComplete: false
+    };
+    setMessages(prev => [...prev, errorMessage]);
+    
+    typewriterEffect("عفواً، حدث خطأ في الاتصال بالخادم", errorMessage.id);
+  }
+};
 
   const formatTime = (date) => {
     return date.toLocaleTimeString('ar-EG', { 
