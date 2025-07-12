@@ -21,9 +21,6 @@ export default function DemoPage() {
     <div style={{ width: "100%", position: "relative"}}>
       <FooterSection />
     </div>
-    <div style={{ width: "100%", position: "relative"}} className='pt-5'>
-      <FooterSection />
-    </div>
     </>
   )
 }
