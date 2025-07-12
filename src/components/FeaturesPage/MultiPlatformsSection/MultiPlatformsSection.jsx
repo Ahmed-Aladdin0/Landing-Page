@@ -1,31 +1,93 @@
 import React from "react";
 import { motion } from "framer-motion";
-export default function MultiPlatformsSection() {
-	const platformItems = [
-		{
-			id: 1,
-			title: "Mobile App",
-			description:
-				"Resident-focused interface for on-the-go access to city services.",
-			imgSrc:
-				"https://placehold.co/600x400/eef6ff/0d6efd?text=Mobile+App+Interface",
-		},
-		{
-			id: 2,
-			title: "Government Dashboard",
-			description:
-				"Comprehensive control center for city officials and administrators.",
-			imgSrc:
-				"https://placehold.co/600x400/e6f7ef/0d6efd?text=Dashboard+Interface",
-		},
-		{
-			id: 3,
-			title: "Provider Portal",
-			description:
-				"Business management tools for service providers and vendors.",
-			imgSrc: "https://placehold.co/600x400/f8f9fa/0d6efd?text=Provider+Portal",
-		},
-	];
+
+export default function MultiPlatformsSection({ activeButton }) {
+	const getPlatformItems = () => {
+		switch (activeButton) {
+			case "For Residents":
+				return [
+					{
+						id: 1,
+						title: "Mobile App",
+						description:
+							"Resident-focused interface for on-the-go access to city services and community features.",
+						imgSrc:
+							"https://placehold.co/600x400/eef6ff/0d6efd?text=Mobile+App+Interface",
+					},
+					{
+						id: 2,
+						title: "Web Portal",
+						description:
+							"Full-featured web interface for desktop access to all resident services and community features.",
+						imgSrc:
+							"https://placehold.co/600x400/e6f7ef/0d6efd?text=Web+Portal+Interface",
+					},
+					{
+						id: 3,
+						title: "Smart Notifications",
+						description:
+							"Real-time alerts and updates about city services, community events, and issue resolution.",
+						imgSrc: "https://placehold.co/600x400/f8f9fa/0d6efd?text=Notifications+Center",
+					},
+				];
+			case "For Government":
+				return [
+					{
+						id: 1,
+						title: "Admin Dashboard",
+						description:
+							"Comprehensive control center for city officials to manage operations and monitor performance.",
+						imgSrc:
+							"https://placehold.co/600x400/eef6ff/0d6efd?text=Admin+Dashboard",
+					},
+					{
+						id: 2,
+						title: "Department Portal",
+						description:
+							"Specialized interfaces for different city departments to handle their specific responsibilities.",
+						imgSrc:
+							"https://placehold.co/600x400/e6f7ef/0d6efd?text=Department+Portal",
+					},
+					{
+						id: 3,
+						title: "Analytics Suite",
+						description:
+							"Advanced reporting and analytics tools for data-driven decision making and performance tracking.",
+						imgSrc: "https://placehold.co/600x400/f8f9fa/0d6efd?text=Analytics+Suite",
+					},
+				];
+			case "For Providers":
+				return [
+					{
+						id: 1,
+						title: "Provider Dashboard",
+						description:
+							"Business management interface for service providers to manage offerings and track orders.",
+						imgSrc:
+							"https://placehold.co/600x400/eef6ff/0d6efd?text=Provider+Dashboard",
+					},
+					{
+						id: 2,
+						title: "Mobile Business App",
+						description:
+							"Mobile interface for providers to manage services, process orders, and communicate with customers.",
+						imgSrc:
+							"https://placehold.co/600x400/e6f7ef/0d6efd?text=Business+Mobile+App",
+					},
+					{
+						id: 3,
+						title: "Business Analytics",
+						description:
+							"Comprehensive business intelligence tools for performance tracking and customer insights.",
+						imgSrc: "https://placehold.co/600x400/f8f9fa/0d6efd?text=Business+Analytics",
+					},
+				];
+			default:
+				return [];
+		}
+	};
+
+	const platformItems = getPlatformItems();
 
 	return (
 		<motion.div
@@ -40,7 +102,7 @@ export default function MultiPlatformsSection() {
 					One Platform, Multiple Interfaces
 				</motion.h1>
 				<motion.p className="fw-bold text-muted">
-					Tailored experiences for every user type, accessible from any device.
+					Tailored experiences for {activeButton.toLowerCase()}, accessible from any device.
 				</motion.p>
 			</motion.div>
 			<motion.div className="row justify-content-center g-4 mb-3">

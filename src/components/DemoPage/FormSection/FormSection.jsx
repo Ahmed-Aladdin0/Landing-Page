@@ -70,22 +70,6 @@ export default function FormSection() {
     }, 3000);
 };
 
-    function validateUsername(username) {
-  return username.trim().length >= 3;
-}
-
-function validateEmail(email) {
-  return /\S+@\S+\.\S+/.test(email);
-}
-
-function validateAge(age) {
-  return age >= 18 && age <= 100;
-}
-
-
-
-
-
     const sectionVariants = {
         hidden: { opacity: 0, y: 100 },
         visible: {
@@ -274,7 +258,7 @@ function validateAge(age) {
                             >
                                 <option value="">Select an option</option>
                                 <option value="smart-services">Smart City Services</option>
-                                <option value="analytics">City Analytics</option>
+                                <option value="service-providers">Service Provider</option>
                                 <option value="citizen-engagement">Citizen Engagement</option>
                                 <option value="other">Other</option>
                             </select>

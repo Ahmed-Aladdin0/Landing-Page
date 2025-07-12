@@ -5,46 +5,138 @@ import {
 	faComments,
 	faStore,
 	faCheckCircle,
+	faChartLine,
+	faCogs,
+	faUsers,
+	faShieldAlt,
+	faHandshake,
+	faTruck,
 } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
-export default function MainFeaturesSection() {
-	const featuresItems = [
-		{
-			id: 1,
-			title: "Report Issues Instantly",
-			description:
-				"Citizens can easily report potholes, broken lights, or other issues via the mobile app.",
-			icon: faBullhorn,
-			features: [
-				"Real-time issue tracking",
-				"Photo attachments",
-				"Location mapping",
-			],
-			bgColor: "#eef2ff",
-		},
-		{
-			id: 2,
-			title: "City Social Feed",
-			description:
-				"Residents can share updates, like and comment, and engage in local conversations.",
-			icon: faComments,
-			features: [
-				"Community discussions",
-				"Event announcements",
-				"Public notices",
-			],
-			bgColor: "#e6f7ef",
-		},
-		{
-			id: 3,
-			title: "Browse Local Services",
-			description:
-				"Discover nearby service providers, browse their offerings, and place orders.",
-			icon: faStore,
-			features: ["Service directory", "Online booking", "Secure payments"],
-			bgColor: "#eef2ff",
-		},
-	];
+
+export default function MainFeaturesSection({ activeButton }) {
+	const getFeaturesItems = () => {
+		switch (activeButton) {
+			case "For Residents":
+				return [
+					{
+						id: 1,
+						title: "Report Issues Instantly",
+						description:
+							"Citizens can easily report potholes, broken lights, or other issues via the mobile app.",
+						icon: faBullhorn,
+						features: [
+							"Real-time issue tracking",
+							"Photo attachments",
+							"Location mapping",
+						],
+						bgColor: "#eef2ff",
+					},
+					{
+						id: 2,
+						title: "City Social Feed",
+						description:
+							"Residents can share updates, like and comment, and engage in local conversations.",
+						icon: faComments,
+						features: [
+							"Community discussions",
+							"Event announcements",
+							"Public notices",
+						],
+						bgColor: "#e6f7ef",
+					},
+					{
+						id: 3,
+						title: "Browse Local Services",
+						description:
+							"Discover nearby service providers, browse their offerings, and place orders.",
+						icon: faStore,
+						features: ["Service directory", "Online booking", "Secure payments"],
+						bgColor: "#eef2ff",
+					},
+				];
+			case "For Government":
+				return [
+					{
+						id: 1,
+						title: "Analytics Dashboard",
+						description:
+							"Comprehensive insights into city operations, citizen engagement, and service performance.",
+						icon: faChartLine,
+						features: [
+							"Real-time metrics",
+							"Performance tracking",
+							"Data visualization",
+						],
+						bgColor: "#eef2ff",
+					},
+					{
+						id: 2,
+						title: "Issue Management",
+						description:
+							"Efficiently track, assign, and resolve citizen-reported issues across departments.",
+						icon: faCogs,
+						features: [
+							"Automated routing",
+							"Status updates",
+							"Priority management",
+						],
+						bgColor: "#e6f7ef",
+					},
+					{
+						id: 3,
+						title: "Citizen Engagement",
+						description:
+							"Monitor and participate in community discussions, announcements, and public feedback.",
+						icon: faUsers,
+						features: ["Community monitoring", "Response management", "Engagement metrics"],
+						bgColor: "#eef2ff",
+					},
+				];
+			case "For Providers":
+				return [
+					{
+						id: 1,
+						title: "Service Management",
+						description:
+							"Manage your service offerings, pricing, and availability through an intuitive dashboard.",
+						icon: faCogs,
+						features: [
+							"Service catalog",
+							"Pricing management",
+							"Availability control",
+						],
+						bgColor: "#eef2ff",
+					},
+					{
+						id: 2,
+						title: "Order Processing",
+						description:
+							"Receive and manage service requests from residents with automated workflows.",
+						icon: faHandshake,
+						features: [
+							"Order notifications",
+							"Status updates",
+							"Payment processing",
+						],
+						bgColor: "#e6f7ef",
+					},
+					{
+						id: 3,
+						title: "Business Analytics",
+						description:
+							"Track your business performance, customer satisfaction, and revenue metrics.",
+						icon: faChartLine,
+						features: ["Performance metrics", "Customer insights", "Revenue tracking"],
+						bgColor: "#eef2ff",
+					},
+				];
+			default:
+				return [];
+		}
+	};
+
+	const featuresItems = getFeaturesItems();
 
 	return (
 		<motion.div

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import citioLogo from "../../../assets/citio.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const Navigate=useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -63,6 +65,8 @@ export default function Navbar() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
+          style={{ cursor: "pointer" }}
+          onClick={() => Navigate("/")}
         >
           <motion.img
             src={citioLogo}

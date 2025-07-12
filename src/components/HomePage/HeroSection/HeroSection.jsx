@@ -1,5 +1,5 @@
 import React from "react";
-import heropic from "../../../assets/heropic.png";
+import heropic from "../../../assets/home.jpg";
 import styles from "./HeroSection.module.css";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -176,7 +176,7 @@ export default function HeroSection() {
 					variants={rightColumnVariants}
 				>
 					<motion.div
-						className="shadow p-4 h-100 w-100 bg-white rounded"
+						className="shadow h-100 w-100 bg-white rounded"
 						whileHover={{
 							boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.2)",
 							transition: { duration: 0.3 },
@@ -186,7 +186,7 @@ export default function HeroSection() {
 							src={heropic}
 							className={`${styles["hero-image"]} img-fluid`}
 							alt="Smart city management"
-							style={{ objectFit: "contain", height: "100%" }}
+							style={{ objectFit: "cover", height: "100%" }}
 							variants={imageVariants}
 							initial="initial"
 							animate="animate"

@@ -1,8 +1,41 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-export default function RequestDemoSection() {
+
+export default function RequestDemoSection({ activeButton }) {
     const navigate = useNavigate();
+    
+    const getDemoContent = () => {
+        switch (activeButton) {
+            case "For Residents":
+                return {
+                    title: "Experience Citio as a Resident",
+                    description: "See how easy it is to report issues, connect with your community, and access local services.",
+                    buttonText: "Try Demo"
+                };
+            case "For Government":
+                return {
+                    title: "Transform Your City Operations",
+                    description: "Discover how Citio can streamline your city's services and improve citizen engagement.",
+                    buttonText: "Request Demo"
+                };
+            case "For Providers":
+                return {
+                    title: "Grow Your Business with Citio",
+                    description: "Learn how to reach more customers and manage your services efficiently on our platform.",
+                    buttonText: "Request Demo"
+                };
+            default:
+                return {
+                    title: "See How Citio Can Help Your City",
+                    description: "Join the growing network of smart cities using Citio to transform urban management",
+                    buttonText: "Request a Demo"
+                };
+        }
+    };
+
+    const demoContent = getDemoContent();
+
 	const sectionVariants = {
         hidden: { opacity: 0, y: 50 },
         visible: {
@@ -44,7 +77,7 @@ export default function RequestDemoSection() {
 				style={{ fontSize: "2.1rem", color: "#fff", lineHeight: 1.18 }}
 				variants={itemVariants}
 			>
-				See How Citio Can Help Your City
+				{demoContent.title}
 			</motion.h2>
 			<motion.p
 				className="lead"
@@ -55,7 +88,7 @@ export default function RequestDemoSection() {
 				}}
 				variants={itemVariants}
 			>
-				Join the growing network of smart cities using Citio to transform urban <br /> management
+				{demoContent.description}
 			</motion.p>
 			<motion.div className="d-flex gap-3 justify-content-center" variants={itemVariants}>
 				<motion.button
@@ -72,7 +105,7 @@ export default function RequestDemoSection() {
 					}}
                     onClick={()=>navigate("/demo")}
 				>
-					Request a Demo
+					{demoContent.buttonText}
 				</motion.button>
 			</motion.div>
 		</motion.div>

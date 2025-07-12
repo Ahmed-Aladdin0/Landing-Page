@@ -5,7 +5,7 @@ import styles from "./PlatformOverviewSection.module.css";
 import mobilePic from "../../../assets/assets_task_01jzj8qg5zfrk8r1vr2an5p3bp_1751886151_img_0.png";
 import dashboardPic from "../../../assets/assets_task_01jzjcwht2f769sgtg18ke9q1p_1751890483_img_1.png";
 import providerPortalPic from "../../../assets/assets_task_01jzjcwht2f769sgtg18ke9q1p_1751890483_img_0.png";
-import communityPic from "../../../assets/community.jpg";
+import communityPic from "../../../assets/communi.jpg";
 
 export default function PlatformOverviewSection() {
   const navigate = useNavigate();
@@ -33,7 +33,7 @@ export default function PlatformOverviewSection() {
       imageAlt: "Service Provider Portal",
       title: "Service Provider Portal",
       description: "Efficient tool for service providers to manage requests",
-      route: "/provider-portal"
+      route: "/provider"
     },
     {
       id: 4,
@@ -54,6 +54,8 @@ export default function PlatformOverviewSection() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          
         >
           Platform Overview
         </motion.h1>
@@ -62,6 +64,7 @@ export default function PlatformOverviewSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
         >
           Explore the Intuitive interfaces designed for all city stakeholders.
         </motion.p>
@@ -84,6 +87,7 @@ export default function PlatformOverviewSection() {
                 delay: index * 0.1
               }
             }}
+            viewport={{ once: true }}
           >
             <div className={`${styles.cardContainer} shadow rounded overflow-hidden position-relative`}>
               {/* Card Image */}
