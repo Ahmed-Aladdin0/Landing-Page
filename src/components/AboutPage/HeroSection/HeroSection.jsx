@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import aboutPic from "../../../assets/about.jpg";
 const HeroSection = () => {
 	return (
 		<section className="py-5 bg-white" style={{ minHeight: "80vh" }}>
@@ -77,13 +77,15 @@ const HeroSection = () => {
 								className="w-100 rounded-4"
 								style={{
 									height: "500px",
-									background:
-										"#129990",
-									border: "1px solid rgba(18,153,144,0.1)",
 								}}
 							>
 								<div className="h-100 d-flex align-items-center justify-content-center text-muted">
-									[City Illustration/Image]
+									<img
+										src={aboutPic}
+										alt="About"
+										className="img-fluid"
+										style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "cover",borderRadius:"10px" }}
+									/>
 								</div>
 							</div>
 						</motion.div>

@@ -186,24 +186,6 @@ export default function StartBuildingSection() {
 					/>
 					Book a Demo
 				</motion.button>
-
-				<motion.button
-					className="btn fw-bold px-md-4 px-3 py-2"
-					style={{
-						background: "rgba(255,255,255,0.16)",
-						color: "#fff",
-						border: "1.5px solid #fff",
-						borderRadius: 999,
-						minWidth: 130,
-						fontSize: 16,
-						backdropFilter: "blur(10px)"
-					}}
-					variants={buttonVariants}
-					whileHover="hover"
-					whileTap="tap"
-				>
-					Learn More
-				</motion.button>
 			</motion.div>
 
 			{/* Floating particles */}

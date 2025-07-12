@@ -1,16 +1,15 @@
 import React from 'react'
 import HeroSection from './HeroSection/HeroSection'
 import Navbar from '../HomePage/Navbar/Navbar'
-import MissionAndFeatures from './WhatWeOffer/WhatWeOffer'
-import WhyUsTechCTA from './WhyUs/WhyUs'
+import CommunityEngagement from './CommunityEngagment/CommunityEngagment'
 import FooterSection from '../HomePage/FooterSection/FooterSection'
-export default function AboutPage() {
+
+export default function CommunityPage() {
   return (
     <>
     <Navbar/>
     <HeroSection/>
-    <MissionAndFeatures />
-    <WhyUsTechCTA />
+    <CommunityEngagement/>
     <FooterSection />
     </>
   )

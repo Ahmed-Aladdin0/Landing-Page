@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import styles from "./HeroSection.module.css";
 import { motion } from "framer-motion";
+import MainFeaturesSection from "../MainFeaturesSection/MainFeaturesSection";
+import MultiPlatformsSection from "../MultiPlatformsSection/MultiPlatformsSection";
+import CompareFeaturesSection from "../CompareFeaturesSection/CompareFeaturesSection";
+import RequestDemoSection from "../RequestDemoSection/RequestDemoSection";
+
 export default function HeroSection() {
 	const [activeButton, setActiveButton] = useState("For Residents");
+	
 	const sectionVariants = {
 		hidden: { opacity: 0, y: 100 },
 		visible: {
@@ -14,6 +20,19 @@ export default function HeroSection() {
 			},
 		},
 	};
+
+	const contentVariants = {
+		hidden: { opacity: 0, y: 50 },
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				duration: 0.6,
+				ease: "easeOut",
+			},
+		},
+	};
+
 	return (
 		<>
 			<motion.div className="container py-5" 
@@ -68,6 +87,46 @@ export default function HeroSection() {
 						</motion.button>
 					</motion.div>
 				</motion.div>
+			</motion.div>
+
+			{/* Dynamic Content Sections */}
+			<motion.div
+				key={activeButton}
+				variants={contentVariants}
+				initial="hidden"
+				animate="visible"
+			>
+				{/* Main Features Section */}
+				<div
+					style={{ width: "100%", position: "relative", backgroundColor: "#fff" }}
+					className="pt-5"
+				>
+					<MainFeaturesSection activeButton={activeButton} />
+				</div>
+
+				{/* Multi Platforms Section */}
+				<div
+					style={{ width: "100%", position: "relative", backgroundColor: "#effbf9" }}
+					className="pt-5"
+				>
+					<MultiPlatformsSection activeButton={activeButton} />
+				</div>
+
+				{/* Compare Features Section */}
+				<div
+					style={{ width: "100%", position: "relative", backgroundColor: "#fff" }}
+					className="pt-5"
+				>
+					<CompareFeaturesSection activeButton={activeButton} />
+				</div>
+
+				{/* Request Demo Section */}
+				<div
+					style={{ width: "100%", position: "relative", backgroundColor: "#effbf9" }}
+					className="pt-5"
+				>
+					<RequestDemoSection activeButton={activeButton} />
+				</div>
 			</motion.div>
 		</>
 	);

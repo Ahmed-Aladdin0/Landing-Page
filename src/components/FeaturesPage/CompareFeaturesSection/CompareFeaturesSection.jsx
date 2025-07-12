@@ -1,44 +1,134 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./CompareFeaturesSection.module.css";
-export default function CompareFeaturesSection() {
-	const columns = [
-		{ id: "feature", label: "Feature" },
-		{ id: "residents", label: "Residents" },
-		{ id: "government", label: "Government" },
-		{ id: "providers", label: "Providers" },
-	];
 
-	const rows = [
-		{
-			id: 1,
-			feature: "Issue Reporting",
-			residents: true,
-			government: true,
-			providers: false,
-		},
-		{
-			id: 2,
-			feature: "Analytics Dashboard",
-			residents: false,
-			government: true,
-			providers: true,
-		},
-		{
-			id: 3,
-			feature: "Service Management",
-			residents: false,
-			government: true,
-			providers: true,
-		},
-		{
-			id: 4,
-			feature: "Social Feed",
-			residents: true,
-			government: true,
-			providers: true,
-		},
-	];
+export default function CompareFeaturesSection({ activeButton }) {
+	const getComparisonData = () => {
+		switch (activeButton) {
+			case "For Residents":
+				return {
+					columns: [
+						{ id: "feature", label: "Feature" },
+						{ id: "basic", label: "Basic" },
+						{ id: "premium", label: "Premium" },
+						{ id: "enterprise", label: "Enterprise" },
+					],
+					rows: [
+						{
+							id: 1,
+							feature: "Issue Reporting",
+							basic: true,
+							premium: true,
+							enterprise: true,
+						},
+						{
+							id: 2,
+							feature: "Community Feed",
+							basic: true,
+							premium: true,
+							enterprise: true,
+						},
+						{
+							id: 3,
+							feature: "Service Booking",
+							basic: false,
+							premium: true,
+							enterprise: true,
+						},
+						{
+							id: 4,
+							feature: "Priority Support",
+							basic: false,
+							premium: false,
+							enterprise: true,
+						},
+					],
+				};
+			case "For Government":
+				return {
+					columns: [
+						{ id: "feature", label: "Feature" },
+						{ id: "starter", label: "Starter" },
+						{ id: "professional", label: "Professional" },
+						{ id: "enterprise", label: "Enterprise" },
+					],
+					rows: [
+						{
+							id: 1,
+							feature: "Issue Management",
+							starter: true,
+							professional: true,
+							enterprise: true,
+						},
+						{
+							id: 2,
+							feature: "Analytics Dashboard",
+							starter: false,
+							professional: true,
+							enterprise: true,
+						},
+						{
+							id: 3,
+							feature: "Multi-Department",
+							starter: false,
+							professional: false,
+							enterprise: true,
+						},
+						{
+							id: 4,
+							feature: "API Integration",
+							starter: false,
+							professional: false,
+							enterprise: true,
+						},
+					],
+				};
+			case "For Providers":
+				return {
+					columns: [
+						{ id: "feature", label: "Feature" },
+						{ id: "basic", label: "Basic" },
+						{ id: "professional", label: "Professional" },
+						{ id: "enterprise", label: "Enterprise" },
+					],
+					rows: [
+						{
+							id: 1,
+							feature: "Service Listing",
+							basic: true,
+							professional: true,
+							enterprise: true,
+						},
+						{
+							id: 2,
+							feature: "Order Management",
+							basic: true,
+							professional: true,
+							enterprise: true,
+						},
+						{
+							id: 3,
+							feature: "Business Analytics",
+							basic: false,
+							professional: true,
+							enterprise: true,
+						},
+						{
+							id: 4,
+							feature: "Advanced Marketing",
+							basic: false,
+							professional: false,
+							enterprise: true,
+						},
+					],
+				};
+			default:
+				return { columns: [], rows: [] };
+		}
+	};
+
+	const { columns, rows } = getComparisonData();
+
 	const containerVariants = {
 		hidden: { opacity: 0, y: 50 },
 		visible: {
@@ -64,10 +154,10 @@ export default function CompareFeaturesSection() {
 		>
 			<motion.div className="text-center mb-5">
 				<motion.h1 className="fw-bold" style={{ fontSize: "37px" ,color:"#129990"}}>
-					Compare Features by Role
+					Compare Features by Plan
 				</motion.h1>
 				<motion.p className="fw-bold text-muted">
-					See how Citio adapts to different user needs.
+					See how Citio adapts to different {activeButton.toLowerCase()} needs.
 				</motion.p>
 			</motion.div>
 
@@ -119,42 +209,21 @@ export default function CompareFeaturesSection() {
 								>
 									{row.feature}
 								</motion.td>
-								<motion.td
-									variants={itemVariants}
-									className="text-center"
-									style={{
-										fontSize: 18,
-										padding: "16px 20px",
-										color: "#14d81a",
-										borderBottom: "1px solid #dee2e6",
-									}}
-								>
-									{row.residents ? "✓" : "-"}
-								</motion.td>
-								<motion.td
-									variants={itemVariants}
-									className="text-center"
-									style={{
-										fontSize: 18,
-										padding: "16px 20px",
-										color: "#14d81a",
-										borderBottom: "1px solid #dee2e6",
-									}}
-								>
-									{row.government ? "✓" : "-"}
-								</motion.td>
-								<motion.td
-									variants={itemVariants}
-									className="text-center"
-									style={{
-										fontSize: 18,
-										padding: "16px 20px",
-										color: "#14d81a",
-										borderBottom: "1px solid #dee2e6",
-									}}
-								>
-									{row.providers ? "✓" : "-"}
-								</motion.td>
+								{columns.slice(1).map((column) => (
+									<motion.td
+										key={column.id}
+										variants={itemVariants}
+										className="text-center"
+										style={{
+											fontSize: 18,
+											padding: "16px 20px",
+											color: "#14d81a",
+											borderBottom: "1px solid #dee2e6",
+										}}
+									>
+										{row[column.id] ? "✓" : "-"}
+									</motion.td>
+								))}
 							</motion.tr>
 						))}
 					</motion.tbody>

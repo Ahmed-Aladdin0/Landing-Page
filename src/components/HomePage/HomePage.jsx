@@ -57,37 +57,7 @@ export default function HomePage() {
 				</motion.button>
 			)}
 
-			{/* Minimized Chat Button - Only show when chat is minimized */}
-			{isChatMinimized && (
-				<motion.button
-					whileHover={{ scale: 1.1 }}
-					whileTap={{ scale: 0.9 }}
-					className="btn position-fixed rounded-circle shadow-lg"
-					style={{
-						bottom: "20px",
-						right: "20px",
-						width: "60px",
-						height: "60px",
-						zIndex: 1000,
-						backgroundColor: "#129990",
-						borderColor: "#129990",
-					}}
-					onClick={() => {
-						setIsChatOpen(true);
-						setIsChatMinimized(false);
-					}}
-					type="button"
-				>
-					<FontAwesomeIcon icon={faComment} size="lg" />
-					{/* Indicator that there's an active chat */}
-					<span
-						className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-						style={{ fontSize: "8px" }}
-					>
-						1
-					</span>
-				</motion.button>
-			)}
+			
 
 			{/* Main Page Content */}
 			<Navbar />

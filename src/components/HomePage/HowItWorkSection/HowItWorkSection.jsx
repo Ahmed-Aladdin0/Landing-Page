@@ -197,7 +197,7 @@ export default function HowItWorkSection() {
 							y1="5"
 							x2="85%"
 							y2="5"
-							stroke="#0d6efd"
+							stroke="#129990"
 							strokeWidth="2"
 							strokeDasharray="5,5"
 							variants={lineVariants}
