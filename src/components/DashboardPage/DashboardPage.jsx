@@ -2,6 +2,7 @@ import Navbar from "../HomePage/Navbar/Navbar";
 import HeroSection from "./HeroSection/HeroSection";
 import FeatureSection from "./FeatureSection/FeatureSection";
 import DashboardAnalytics from "./Analytics/Analytics";
+import FooterSection from "../HomePage/FooterSection/FooterSection";
 const DashboardPage = () => {
   return (
     <>
@@ -9,6 +10,7 @@ const DashboardPage = () => {
       <HeroSection /> 
       <DashboardAnalytics />
       <FeatureSection />
+      <FooterSection />
     </>
   );
 };
